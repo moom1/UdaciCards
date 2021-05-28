@@ -37,9 +37,8 @@ export default function App() {
           inactiveTintColor: "gray",
         }}
       >
-        <Tabs.Screen name="New" component={AddNewDeck} />
-
         <Tabs.Screen name="Decks" component={Decks} />
+        <Tabs.Screen name="New" component={AddNewDeck} />
       </Tabs.Navigator>
     </NavigationContainer>
   );

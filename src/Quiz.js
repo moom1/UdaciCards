@@ -31,6 +31,14 @@ export default class Quiz extends Component {
     this.setState({ showAnswer: true });
   };
 
+  handleReset = () => {
+    this.setState({
+      cards: [...this.props.route.params.cards],
+      score: 0,
+      showAnswer: false,
+    });
+  };
+
   render() {
     const { name } = this.props.route.params;
     const { score, cards, showAnswer } = this.state;
@@ -54,6 +62,9 @@ export default class Quiz extends Component {
               Congrats! You answered {score}/
               {this.props.route.params.cards.length}
             </Text>
+
+            <Button title="Reset" onPress={this.handleReset} />
+            {/* <Button title="GoBack" onPress={this.handleGoBack} /> */}
           </Center>
         )}
       </Center>

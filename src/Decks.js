@@ -30,19 +30,26 @@ function Feed({ navigation }) {
   return (
     <Center>
       <FlatList
-        //TODO retrieve actual lists
         style={{ width: "100%" }}
         renderItem={({ item }) => {
           return (
-            <Button
-              title={`${item} \n ${decks[item].length} Cards`}
-              onPress={() => {
-                navigation.navigate("deck", {
-                  name: item,
-                  cards: decks[item],
-                });
+            <View
+              style={{
+                marginBottom: 10,
+                borderWidth: 1,
+                borderBottomColor: "black",
               }}
-            />
+            >
+              <Button
+                title={`${item} \n ${decks[item].length} Cards`}
+                onPress={() => {
+                  navigation.navigate("deck", {
+                    name: item,
+                    cards: decks[item],
+                  });
+                }}
+              />
+            </View>
           );
         }}
         keyExtractor={(product, idx) => product + idx}

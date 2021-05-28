@@ -18,23 +18,10 @@ export default class AddNewCard extends Component {
       name: this.props.route.params.name,
       cards: this.props.route.params.cards,
     };
-    // console.log(this.props.route.params.name);
-    // console.log("new card:", card);
     storeCard(card);
-    // this.setState({ name: "" });
     Alert.alert("Card added successfully! 👍");
     console.log(this.props);
     this.props.navigation.navigate("Feed");
-  };
-  onReadDecks = () => {
-    // addDeck(name);
-    getDecks();
-    // const decks = getDecks();
-    // console.log(this.state);
-  };
-
-  onClear = () => {
-    // clearDecks();
   };
 
   render() {
@@ -57,18 +44,6 @@ export default class AddNewCard extends Component {
           title={"Add a new card"}
           style={styles.input}
           onPress={this.onCreateCard}
-        />
-
-        <Text>Remove these buttons on submittion</Text>
-        <Button
-          title={"check card data"}
-          style={styles.input}
-          onPress={this.onReadDecks}
-        />
-        <Button
-          title={"clear card data"}
-          style={styles.input}
-          onPress={this.onClear}
         />
       </Center>
     );
