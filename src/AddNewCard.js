@@ -20,8 +20,10 @@ export default class AddNewCard extends Component {
     };
     storeCard(card);
     Alert.alert("Card added successfully! 👍");
-    console.log(this.props);
-    this.props.navigation.navigate("Feed");
+    this.props.navigation.navigate("deck", {
+      name: this.props.route.params.name,
+      cards: [...this.props.route.params.cards, { question, answer }],
+    });
   };
 
   render() {

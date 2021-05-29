@@ -7,7 +7,14 @@ export default class Card extends Component {
     const { question, answer } = this.props;
     return (
       <Center>
-        <Text> {question} </Text>
+        <Text
+          style={{
+            fontSize: 60,
+          }}
+        >
+          {" "}
+          {question}{" "}
+        </Text>
 
         {this.props.showAnswer ? (
           <Text> {answer} </Text>

@@ -39,6 +39,15 @@ export default class Quiz extends Component {
     });
   };
 
+  handleGoBack = () => {
+    const { name, cards } = this.props.route.params;
+
+    this.props.navigation.navigate("deck", {
+      name,
+      cards,
+    });
+  };
+
   render() {
     const { name } = this.props.route.params;
     const { score, cards, showAnswer } = this.state;
@@ -53,7 +62,16 @@ export default class Quiz extends Component {
               showAnswer={showAnswer}
               handleAnswer={this.handleShowAnswer}
             />
-            <Button title="Correct" onPress={this.handleCorrect} />
+
+            <View
+              style={{
+                marginBottom: 10,
+                borderWidth: 1,
+                borderBottomColor: "black",
+              }}
+            >
+              <Button title="Correct" onPress={this.handleCorrect} />
+            </View>
             <Button title="Incorrect" onPress={this.handleIncorrect} />
           </Center>
         ) : (
@@ -63,8 +81,16 @@ export default class Quiz extends Component {
               {this.props.route.params.cards.length}
             </Text>
 
+            <View
+              style={{
+                marginBottom: 10,
+                borderWidth: 1,
+                borderBottomColor: "black",
+              }}
+            >
+              <Button title="GoBack" onPress={this.handleGoBack} />
+            </View>
             <Button title="Reset" onPress={this.handleReset} />
-            {/* <Button title="GoBack" onPress={this.handleGoBack} /> */}
           </Center>
         )}
       </Center>
