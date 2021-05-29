@@ -14,9 +14,7 @@ export default function App() {
       <Tabs.Navigator
         initialRouteName="Decks"
         screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-
+          tabBarIcon: ({ color, size }) => {
             if (route.name === "Decks") {
               return (
                 <MaterialCommunityIcons

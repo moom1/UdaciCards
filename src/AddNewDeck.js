@@ -14,8 +14,6 @@ export default class AddNewDeck extends Component {
     const deck = { [name]: [] };
     storeDeck(deck);
     this.setState({ name: "" });
-    Alert.alert("Deck added successfully! 👍");
-    // this.props.navigation.navigate("Feed");
     this.props.navigation.navigate("deck", {
       name,
       cards: [],

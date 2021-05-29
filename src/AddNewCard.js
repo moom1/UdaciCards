@@ -19,7 +19,6 @@ export default class AddNewCard extends Component {
       cards: this.props.route.params.cards,
     };
     storeCard(card);
-    Alert.alert("Card added successfully! 👍");
     this.props.navigation.navigate("deck", {
       name: this.props.route.params.name,
       cards: [...this.props.route.params.cards, { question, answer }],
